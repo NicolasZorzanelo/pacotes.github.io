@@ -27,9 +27,12 @@ h1{font-size:clamp(2.2rem,7vw,3.6rem);font-weight:800;letter-spacing:-.02em;max-
 .steps li{counter-increment:s;display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.08);border-radius:12px;padding:12px 14px;font-size:.95rem}
 .steps li::before{content:counter(s);flex:none;width:26px;height:26px;border-radius:50%;background:var(--tom);color:#fff;font-weight:700;font-size:.85rem;display:grid;place-items:center}
 .steps b{display:block}.steps span{opacity:.75;font-size:.85rem}
-.btn{font:700 1rem "DM Sans",sans-serif;border:0;border-radius:12px;padding:13px 22px;cursor:pointer;background:var(--tom);color:#fff}
+.btn{font:700 1rem "DM Sans",sans-serif;border:0;border-radius:12px;padding:13px 22px;cursor:pointer;background:var(--tom);color:#fff;transition:background .2s,box-shadow .2s,transform .15s}
 .btn:hover{background:var(--tomglow);box-shadow:0 6px 20px rgba(201,91,118,.32)}
+.btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
 .btn.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
+.btn.wpp{background:#25D366;color:#0B090A;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800}
+.btn.wpp:hover:not(:disabled){background:#32e073;box-shadow:0 6px 20px rgba(37,211,102,.32)}
 :focus-visible{outline:3px solid var(--tom);outline-offset:2px}
 .pr{font-weight:700;font-size:.95rem;white-space:nowrap}.pkcost{margin:0 0 16px;font-weight:700;font-size:1.05rem}.tag.cp{background:var(--bassoft);color:var(--bas)}.tag.ce{background:var(--optsoft);color:var(--opt)}.tag.cd{background:var(--ambsoft);color:var(--amb)}.tag.cs{background:transparent;color:var(--mute);border:1px dashed var(--line)}.it .meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-top:8px}
 .tiers-wrap{position:relative;margin-top:18px}
@@ -90,7 +93,10 @@ summary small{color:var(--mute);white-space:nowrap}
 dialog{border:0;border-radius:20px;padding:24px;max-width:560px;width:calc(100% - 32px);background:var(--surface);color:var(--ink)}
 dialog::backdrop{background:rgba(0,0,0,.5)}
 textarea{width:100%;height:280px;margin:14px 0;border:1.5px solid var(--line);border-radius:12px;padding:12px;font:400 .9rem/1.5 "DM Sans",sans-serif;background:var(--bg);color:var(--ink);resize:vertical}
-.row{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+.row{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+.cf-stack{display:grid;gap:8px}
+.cf-subrow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cf-subrow .btn{padding:11px 12px;font-size:.9rem}
 .empty{color:var(--mute);padding:16px 0}
 footer{color:var(--mute);font-size:.85rem;padding:36px 0 0}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -146,7 +152,6 @@ a.sq:hover{border-color:var(--tomglow);transform:translateY(-3px)}
 .sq .ic{font:800 2.4rem/1 "Bricolage Grotesque","DM Sans",sans-serif;color:var(--tomglow);margin-bottom:auto}
 .sq h3{font-size:1.4rem;font-weight:800}.sq p{margin:0;opacity:.8;font-size:.95rem;overflow-wrap:anywhere}
 @media (prefers-reduced-motion:reduce){dialog.full[open],dialog.cart[open]{animation:none}button.ph{transition:none}}
-
 
 .editfab{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:12px;z-index:20;font:700 .85rem "DM Sans",sans-serif;background:var(--ink);color:var(--bg);border:0;border-radius:99px;padding:9px 16px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.25)}
 .editfab[hidden]{display:none}
@@ -205,7 +210,8 @@ a.sq:hover{border-color:var(--tomglow);transform:translateY(-3px)}
 .wk .stp button{width:30px;height:30px;padding:0;border-radius:50%;font-size:1rem}
 .wk .hint{flex-basis:100%;color:var(--mute);font-size:.8rem}
 .hint2{margin:0;color:var(--mute);font-size:.85rem}
-</style></head><body><noscript>Esta página precisa de JavaScript para exibir o conteúdo.</noscript><script id="cfg" type="application/json">{"text":{"h1":"Monte o plano de marketing do seu negócio","lead":"Compare os pacotes ou monte o seu, serviço por serviço. O carrinho soma os preços de referência de tudo o que você marcar.","pkgsTitle":"Nossos pacotes prontos recomendados","builderTitle":"Monte o seu pacote","aboutTitle":"Considerações finais","about":"[Texto provisório] Espaço para apresentar quem somos, como trabalhamos e os próximos passos depois da escolha dos serviços.","contactTitle":"Vamos conversar","portfolioText":"Meus trabalhos","linkedinText":"LinkedIn","footer":"Esta lista é um ponto de partida: as prioridades são uma recomendação e podem mudar depois do diagnóstico. Valores em reais, com referência de novembro de 2026. O preço final depende do escopo de cada projeto. Nos itens por unidade, o valor é por peça, vídeo ou post, podendo ser alterado conforme o pacote acordado entre as partes."},"links":{"portfolio":"https://www.behance.net/nicolaszorzanelo","linkedin":"https://www.linkedin.com/in/nicolas-zorzanelo/"},"contact":{"name":"Nicolas","phone":"+554499999-9225","email":"contato.nicolaszorzanelo@gmail.com"},"sections":{"hero":true,"pkgs":true,"builder":true,"about":true,"contact":true},"items":[{"id":"1.1","name":"Diagnóstico da situação atual","p":"e","v":900,"u":"u","c":"d","note":"Levantamento de perfis sociais, Google Maps, ofertas, preços e dados que já existem","inc":"","ph":0,"ap":0},{"id":"1.2","name":"Pesquisa de mercado e público","p":"e","v":1370,"u":"u","c":"e","note":"Conversa com 10 a 15 clientes para entender o que eles valorizam","inc":"","ph":0,"ap":0},{"id":"1.3","name":"Análise da concorrência","p":"e","v":500,"u":"u","c":"d","note":"Mapeamento dos concorrentes locais: preços, redes sociais e avaliações","inc":"","ph":0,"ap":0},{"id":"1.4","name":"Perfil do cliente ideal","p":"e","v":830,"u":"u","c":"e","note":"Definição dos perfis de cliente que mais interessam ao negócio","inc":"","ph":0,"ap":0},{"id":"1.5","name":"Posicionamento e proposta de valor","p":"e","v":1970,"u":"u","c":"e","note":"Por que escolher vocês e não a concorrência, com um discurso claro para cada marca","inc":"","ph":0,"ap":0},{"id":"1.6","name":"Mapa da jornada do cliente","p":"i","v":1070,"u":"u","c":"e","note":"Caminho do cliente do primeiro contato até a compra e a recompra","inc":"","ph":0,"ap":0},{"id":"1.7","name":"Metas e indicadores","p":"e","v":450,"u":"u","c":"d","note":"Os números que mostram se o marketing funciona: vendas, contatos e retenção","inc":"","ph":0,"ap":0},{"id":"1.8","name":"Plano de marketing completo","p":"e","v":6000,"u":"u","c":"e","note":"Reúne diagnóstico, pesquisa, concorrência, perfil de cliente, posicionamento, metas e calendário, além da escolha de canais e do orçamento. Ao marcar este item, os itens incluídos entram juntos","inc":"1.1,1.2,1.3,1.4,1.5,1.7,1.9","ph":0,"ap":0},{"id":"1.9","name":"Calendário de campanhas","p":"i","v":670,"u":"u","c":"e","note":"Datas e campanhas sazonais planejadas ao longo do ano","inc":"","ph":0,"ap":0},{"id":"2.1","name":"Criação de nome","p":"n","v":null,"u":"u","c":"","note":"Não se aplica: o nome já existe","inc":"","ph":1,"ap":0},{"id":"2.2","name":"Identidade visual (logo, cores, fontes)","p":"e","v":2170,"u":"u","c":"p","note":"Logo, cores e fontes padronizados. Essencial se o visual atual estiver inconsistente. Com manual de marca completo, o valor é maior","inc":"","ph":1,"ap":0},{"id":"2.3","name":"Manual de marca enxuto","p":"i","v":1300,"u":"u","c":"d","note":"1 a 2 páginas com regras de uso de logo, cores e fontes","inc":"","ph":1,"ap":0},{"id":"2.4","name":"Tom de voz","p":"e","v":1370,"u":"u","c":"e","note":"Como a marca fala nas redes sociais e no atendimento","inc":"","ph":1,"ap":0},{"id":"2.5","name":"Design de embalagem","p":"i","v":850,"u":"u","c":"d","note":"Embalagens que também funcionam como propaganda. O valor é para rótulo simples; embalagens completas custam mais","inc":"","ph":1,"ap":0},{"id":"2.6","name":"Renovação completa da marca","p":"o","v":5330,"u":"u","c":"p","note":"Só se o diagnóstico mostrar um problema sério de imagem","inc":"","ph":1,"ap":0},{"id":"3.1","name":"Rastreamento (Google Analytics, pixels)","p":"e","v":830,"u":"u","c":"e","note":"Sem isso não dá para saber se o anúncio funcionou","inc":"","ph":2,"ap":0},{"id":"3.2","name":"Adequação à LGPD","p":"e","v":2670,"u":"u","c":"p","note":"Tratamento correto de dados pessoais. Com dados sensíveis (saúde, biometria), o valor é maior","inc":"","ph":2,"ap":0},{"id":"3.3","name":"Gestão simples de redes sociais","p":"e","v":900,"u":"m","c":"e","note":"Manutenção dos perfis: publicações essenciais, informações atualizadas e Google Meu Negócio em dia","inc":"","ph":2,"ap":0},{"id":"3.4","name":"Otimização técnica do site (SEO)","p":"i","v":2330,"u":"m","c":"p","note":"Ajustes para o site ser encontrado no Google. Vale depois que o site existir","inc":"","ph":2,"ap":0},{"id":"3.5","name":"Palavras-chave e conteúdo local","p":"i","v":1000,"u":"u","c":"e","note":"Termos que o público da região realmente pesquisa","inc":"","ph":2,"ap":0},{"id":"3.6","name":"Agente de IA para atendimento (WhatsApp)","p":"e","v":600,"u":"m","c":"d","note":"Atende os clientes automaticamente no principal canal de venda. Mensalidade fixa","inc":"","ph":2,"ap":0},{"id":"3.6a","name":"Catálogo de WhatsApp e configuração geral","p":"e","v":350,"u":"u","c":"d","note":"Catálogo de produtos ou serviços, respostas rápidas, perfil comercial e link direto","inc":"","ph":2,"ap":0},{"id":"3.7","name":"CRM (cadastro de clientes)","p":"i","v":200,"u":"m","c":"p","note":"Histórico de contatos e compras de cada cliente. Valor da mensalidade da ferramenta, sem a implantação","inc":"","ph":2,"ap":0},{"id":"3.8","name":"Site novo ou redesign","p":"i","v":2670,"u":"u","c":"p","note":"Site institucional de até 5 páginas com informações, ofertas e contato","inc":"","ph":2,"ap":0},{"id":"3.9","name":"Landing pages","p":"e","v":1330,"u":"u","c":"p","note":"Página focada em uma única ação, como agendar, pedir ou experimentar. É para onde o anúncio leva o cliente","inc":"","ph":2,"ap":0},{"id":"4.1","name":"Textos para anúncios, posts e páginas","p":"e","v":600,"u":"u","c":"d","note":"Pacote com 3 a 5 variações de anúncio, legendas e textos de página","inc":"","ph":3,"ap":0},{"id":"4.2","name":"Design gráfico de posts e materiais","p":"e","v":200,"u":"w","c":"p","note":"Modelos reutilizáveis para posts e stories. Avulso é uma peça; no plano mensal, quanto mais por semana, menor o preço por peça","inc":"","ph":3,"ap":0},{"id":"4.3","name":"Fotografia profissional","p":"e","v":930,"u":"u","c":"p","note":"Sessão para 10 a 20 itens, com produtos, espaço e pessoas. Foto ruim é um dos maiores gargalos","inc":"","ph":3,"ap":0},{"id":"4.4","name":"Vídeos e reels","p":"e","v":500,"u":"w","c":"d","note":"Vídeos curtos de bastidores, depoimentos e demonstrações. O valor é fixo por vídeo, mas pode mudar conforme a complexidade da demanda. No plano mensal, quanto mais por semana, menor o preço por vídeo","inc":"","ph":3,"ap":0},{"id":"4.5","name":"Animações simples","p":"i","v":700,"u":"u","c":"d","note":"Vinhetas e animações curtas para stories","inc":"","ph":3,"ap":0},{"id":"4.6","name":"Renderização 3D de produto","p":"o","v":5000,"u":"u","c":"d","note":"Valor de referência para animação 3D de produto de 30 segundos. Varia conforme a complexidade do serviço. Imagens estáticas custam menos","inc":"","ph":3,"ap":1},{"id":"4.7","name":"Podcast","p":"n","v":null,"u":"u","c":"","note":"Não se aplica","inc":"","ph":3,"ap":0},{"id":"4.8","name":"Blog e materiais ricos","p":"o","v":400,"u":"x","c":"d","note":"Retorno lento. O valor varia conforme o tamanho e a pesquisa de cada post","inc":"","ph":3,"ap":0},{"id":"5.1","name":"Plano de lançamento de produto novo","p":"o","v":2000,"u":"u","c":"d","note":"Só se houver serviço ou produto novo","inc":"","ph":4,"ap":0},{"id":"5.2","name":"Campanhas sazonais","p":"i","v":2670,"u":"c","c":"e","note":"Criação de conteúdo para impulsionar datas-chave. Recomendado a cada trimestre","inc":"","ph":4,"ap":0},{"id":"5.3","name":"Estratégia de redes sociais","p":"e","v":1370,"u":"u","c":"e","note":"Um perfil por marca, com papel definido para cada rede","inc":"","ph":4,"ap":0},{"id":"5.4","name":"Gestão completa de redes sociais","p":"e","v":1530,"u":"m","c":"p","note":"Gestão de perfis, calendário de posts e reputação online (avaliações e respostas). Constância vale mais do que volume","inc":"","ph":4,"ap":0},{"id":"5.5","name":"Agente de IA para comentários e mensagens","p":"e","v":600,"u":"m","c":"d","note":"Responde comentários e mensagens das redes sociais automaticamente. Mensalidade fixa","inc":"","ph":4,"ap":0},{"id":"5.6","name":"Influenciadores locais","p":"i","v":1170,"u":"x","c":"p","note":"Micro-influenciadores costumam funcionar bem em cidades menores","inc":"","ph":4,"ap":0},{"id":"5.7","name":"Monitoramento de menções","p":"o","v":530,"u":"m","c":"e","note":"Útil só quando há muitas menções","inc":"","ph":4,"ap":0},{"id":"5.8","name":"Planejamento de mídia paga","p":"e","v":null,"u":"u","c":"s","note":"Divisão da verba e do raio geográfico dos anúncios. Já vem incluso na gestão de tráfego pago; contratado sozinho, o valor é sob orçamento","inc":"","ph":4,"ap":0},{"id":"5.9","name":"Gestão de tráfego pago (Instagram, Facebook, Google e outras plataformas)","p":"e","v":null,"u":"p","c":"d","note":"Honorário único de 35% do valor investido em anúncios. A verba é paga à parte, direto às plataformas. Recomendado testar o Google depois das redes sociais","inc":"5.8","ph":4,"ap":0},{"id":"5.12","name":"Remarketing","p":"i","v":470,"u":"m","c":"e","note":"Precisa de visitas suficientes no site","inc":"","ph":4,"ap":0},{"id":"5.14","name":"E-mail marketing","p":"o","v":800,"u":"m","c":"d","note":"O WhatsApp costuma cumprir esse papel no comércio local","inc":"","ph":4,"ap":1},{"id":"5.15","name":"Agentes de IA para atendimento (serviço geral)","p":"i","v":null,"u":"u","c":"s","note":"Agentes de IA sob medida para atender em vários canais. O valor depende da necessidade","inc":"","ph":4,"ap":0},{"id":"5.16","name":"Fidelidade e retenção","p":"e","v":null,"u":"u","c":"s","note":"Cartão, cupom ou plano que incentiva o cliente a voltar","inc":"","ph":4,"ap":0},{"id":"5.17","name":"Alinhamento entre anúncio e atendimento","p":"e","v":1070,"u":"u","c":"e","note":"Treinar quem atende para transformar o contato em venda","inc":"","ph":4,"ap":0},{"id":"5.18","name":"Materiais comerciais","p":"i","v":770,"u":"u","c":"e","note":"Tabelas, cardápios e catálogos bem diagramados","inc":"","ph":4,"ap":0},{"id":"5.19","name":"Marketing de conteúdo (inbound)","p":"o","v":2900,"u":"m","c":"d","note":"Atrair clientes com conteúdo. Retorno lento","inc":"","ph":4,"ap":0},{"id":"5.20","name":"Pontuação de leads","p":"n","v":null,"u":"u","c":"","note":"Volume baixo: uma planilha resolve","inc":"","ph":4,"ap":0},{"id":"5.21","name":"Parcerias e convênios locais","p":"o","v":1000,"u":"u","c":"e","note":"Convênios com empresas da região e ações em conjunto com outros negócios","inc":"","ph":4,"ap":0},{"id":"5.26","name":"Eventos e ativações","p":"i","v":null,"u":"u","c":"s","note":"Ações presenciais, como demonstrações abertas, noites temáticas e lançamentos","inc":"","ph":4,"ap":0},{"id":"5.27","name":"Comunicação visual nos locais","p":"i","v":null,"u":"u","c":"s","note":"Fachada, cardápio e sinalização interna. Orçamento feito com gráfica ou empresa de comunicação visual","inc":"","ph":4,"ap":0},{"id":"5.28","name":"Mídia tradicional","p":"i","v":null,"u":"u","c":"s","note":"Panfleto direcionado, faixas e rádio local. O valor depende da mídia escolhida","inc":"","ph":4,"ap":0},{"id":"5.29","name":"Brindes e materiais promocionais","p":"o","v":null,"u":"u","c":"s","note":"Itens de marca para clientes e equipe. O valor depende do item e da quantidade","inc":"","ph":4,"ap":0},{"id":"6.1","name":"Painéis de resultados","p":"i","v":1070,"u":"u","c":"e","note":"Painel único com os números principais","inc":"","ph":5,"ap":0},{"id":"6.2","name":"Relatório mensal","p":"e","v":400,"u":"m","c":"d","note":"Relatório curto e em linguagem simples: vendas, contatos e custo por resultado","inc":"","ph":5,"ap":0},{"id":"6.4","name":"Pesquisa de satisfação (NPS)","p":"i","v":530,"u":"u","c":"e","note":"Mede a satisfação e alimenta a retenção","inc":"","ph":5,"ap":0}],"pkgs":[{"n":"Básico","t":"Para manter as redes ativas com conteúdo todo mês.","b":"","sub":"Desconto especial para começar hoje.","u":0,"m":1400,"ids":["4.2","4.4"],"qty":{"4.2":0.5,"4.4":0.5},"custom":true,"av":2504,"li":["2 vídeos reels por mês","6 posts estáticos por mês","Manutenção de imagem","Estudo de tendências"]},{"n":"Essencial","t":"Para organizar a base, atender melhor e acompanhar o resultado.","b":"Mais escolhido","sub":"","u":2300,"m":3350,"ids":["1.1","1.7","3.1","3.6a","4.2","4.4","5.4","5.8","6.2"],"qty":{"4.2":1,"4.4":0.5},"np":true},{"n":"Crescimento","t":"Para atrair, converter e acompanhar clientes todos os meses.","b":"Mais completo","sub":"","u":8050,"m":5150,"ids":["1.1","1.3","1.4","1.7","2.4","3.1","3.6","3.6a","3.9","4.1","4.2","4.3","4.4","5.3","5.4","5.8","5.9","6.2"],"qty":{"4.2":2,"4.4":1}}],"vol":{"weeks":4,"step":6,"cap":30}}</script><script id="app">function sanitizeCFG(c){
+.fin-note{margin:6px 0 0;font-size:.78rem;color:var(--mute);text-align:center}
+</style></head><body><noscript>Esta página precisa de JavaScript para exibir o conteúdo.</noscript><script id="cfg" type="application/json">{"text":{"h1":"Monte o plano de marketing do seu negócio","lead":"Compare os pacotes ou monte o seu, serviço por serviço. O carrinho soma os preços de referência de tudo o que você marcar.","pkgsTitle":"Nossos pacotes prontos recomendados","builderTitle":"Monte o seu pacote","aboutTitle":"Considerações finais","about":"[Texto provisório] Espaço para apresentar quem somos, como trabalhamos e os próximos passos depois da escolha dos serviços.","contactTitle":"Vamos conversar","portfolioText":"Meus trabalhos","linkedinText":"LinkedIn","footer":"Esta lista é um ponto de partida: as prioridades são uma recomendação e podem mudar depois do diagnóstico. Valores em reais, com referência de novembro de 2026. O preço final depende do escopo de cada projeto. Nos itens por unidade, o valor é por peça, vídeo ou post, podendo ser alterado conforme o pacote acordado entre as partes."},"links":{"portfolio":"https://www.behance.net/nicolaszorzanelo","linkedin":"https://www.linkedin.com/in/nicolas-zorzanelo/"},"contact":{"name":"Nicolas","phone":"+554499999-9225","email":"contato.nicolaszorzanelo@gmail.com"},"sections":{"hero":true,"pkgs":true,"builder":true,"about":false,"contact":true},"items":[{"id":"1.1","name":"Diagnóstico da situação atual","p":"e","v":900,"u":"u","c":"d","note":"Levantamento de perfis sociais, Google Maps, ofertas, preços e dados que já existem","inc":"","ph":0,"ap":0},{"id":"1.2","name":"Pesquisa de mercado e público","p":"e","v":1370,"u":"u","c":"e","note":"Conversa com 10 a 15 clientes para entender o que eles valorizam","inc":"","ph":0,"ap":0},{"id":"1.3","name":"Análise da concorrência","p":"e","v":500,"u":"u","c":"d","note":"Mapeamento dos concorrentes locais: preços, redes sociais e avaliações","inc":"","ph":0,"ap":0},{"id":"1.4","name":"Perfil do cliente ideal","p":"e","v":830,"u":"u","c":"e","note":"Definição dos perfis de cliente que mais interessam ao negócio","inc":"","ph":0,"ap":0},{"id":"1.5","name":"Posicionamento e proposta de valor","p":"e","v":1970,"u":"u","c":"e","note":"Por que escolher vocês e não a concorrência, com um discurso claro para cada marca","inc":"","ph":0,"ap":0},{"id":"1.6","name":"Mapa da jornada do cliente","p":"i","v":1070,"u":"u","c":"e","note":"Caminho do cliente do primeiro contato até a compra e a recompra","inc":"","ph":0,"ap":0},{"id":"1.7","name":"Metas e indicadores","p":"e","v":450,"u":"u","c":"d","note":"Os números que mostram se o marketing funciona: vendas, contatos e retenção","inc":"","ph":0,"ap":0},{"id":"1.8","name":"Plano de marketing completo","p":"e","v":6000,"u":"u","c":"e","note":"Reúne diagnóstico, pesquisa, concorrência, perfil de cliente, posicionamento, metas e calendário, além da escolha de canais e do orçamento. Ao marcar este item, os itens incluídos entram juntos","inc":"1.1,1.2,1.3,1.4,1.5,1.7,1.9","ph":0,"ap":0},{"id":"1.9","name":"Calendário de campanhas","p":"i","v":670,"u":"u","c":"e","note":"Datas e campanhas sazonais planejadas ao longo do ano","inc":"","ph":0,"ap":0},{"id":"2.1","name":"Criação de nome","p":"n","v":null,"u":"u","c":"","note":"Não se aplica: o nome já existe","inc":"","ph":1,"ap":0},{"id":"2.2","name":"Identidade visual (logo, cores, fontes)","p":"e","v":2170,"u":"u","c":"p","note":"Logo, cores e fontes padronizados. Essencial se o visual atual estiver inconsistente. Com manual de marca completo, o valor é maior","inc":"","ph":1,"ap":0},{"id":"2.3","name":"Manual de marca enxuto","p":"i","v":1300,"u":"u","c":"d","note":"1 a 2 páginas com regras de uso de logo, cores e fontes","inc":"","ph":1,"ap":0},{"id":"2.4","name":"Tom de voz","p":"e","v":1370,"u":"u","c":"e","note":"Como a marca fala nas redes sociais e no atendimento","inc":"","ph":1,"ap":0},{"id":"2.5","name":"Design de embalagem","p":"i","v":850,"u":"u","c":"d","note":"Embalagens que também funcionam como propaganda. O valor é para rótulo simples; embalagens completas custam mais","inc":"","ph":1,"ap":0},{"id":"2.6","name":"Renovação completa da marca","p":"o","v":5330,"u":"u","c":"p","note":"Só se o diagnóstico mostrar um problema sério de imagem","inc":"","ph":1,"ap":0},{"id":"3.1","name":"Rastreamento (Google Analytics, pixels)","p":"e","v":830,"u":"u","c":"e","note":"Sem isso não dá para saber se o anúncio funcionou","inc":"","ph":2,"ap":0},{"id":"3.2","name":"Adequação à LGPD","p":"e","v":2670,"u":"u","c":"p","note":"Tratamento correto de dados pessoais. Com dados sensíveis (saúde, biometria), o valor é maior","inc":"","ph":2,"ap":0},{"id":"3.3","name":"Gestão simples de redes sociais","p":"e","v":900,"u":"m","c":"e","note":"Manutenção dos perfis: publicações essenciais, informações atualizadas e Google Meu Negócio em dia","inc":"","ph":2,"ap":0},{"id":"3.4","name":"Otimização técnica do site (SEO)","p":"i","v":2330,"u":"m","c":"p","note":"Ajustes para o site ser encontrado no Google. Vale depois que o site existir","inc":"","ph":2,"ap":0},{"id":"3.5","name":"Palavras-chave e conteúdo local","p":"i","v":1000,"u":"u","c":"e","note":"Termos que o público da região realmente pesquisa","inc":"","ph":2,"ap":0},{"id":"3.6","name":"Agente de IA para atendimento (WhatsApp)","p":"e","v":600,"u":"m","c":"d","note":"Atende os clientes automaticamente no principal canal de venda. Mensalidade fixa","inc":"","ph":2,"ap":0},{"id":"3.6a","name":"Catálogo de WhatsApp e configuração geral","p":"e","v":350,"u":"u","c":"d","note":"Catálogo de produtos ou serviços, respostas rápidas, perfil comercial e link direto","inc":"","ph":2,"ap":0},{"id":"3.7","name":"CRM (cadastro de clientes)","p":"i","v":200,"u":"m","c":"p","note":"Histórico de contatos e compras de cada cliente. Valor da mensalidade da ferramenta, sem a implantação","inc":"","ph":2,"ap":0},{"id":"3.8","name":"Site novo ou redesign","p":"i","v":2670,"u":"u","c":"p","note":"Site institucional de até 5 páginas com informações, ofertas e contato","inc":"","ph":2,"ap":0},{"id":"3.9","name":"Landing pages","p":"e","v":1330,"u":"u","c":"p","note":"Página focada em uma única ação, como agendar, pedir ou experimentar. É para onde o anúncio leva o cliente","inc":"","ph":2,"ap":0},{"id":"4.1","name":"Textos para anúncios, posts e páginas","p":"e","v":600,"u":"u","c":"d","note":"Pacote com 3 a 5 variações de anúncio, legendas e textos de página","inc":"","ph":3,"ap":0},{"id":"4.2","name":"Design gráfico de posts e materiais","p":"e","v":200,"u":"w","c":"p","note":"Modelos reutilizáveis para posts e stories. Avulso é uma peça; no plano mensal, quanto mais por semana, menor o preço por peça","inc":"","ph":3,"ap":0},{"id":"4.3","name":"Fotografia profissional","p":"e","v":930,"u":"u","c":"p","note":"Sessão para 10 a 20 itens, com produtos, espaço e pessoas. Foto ruim é um dos maiores gargalos","inc":"","ph":3,"ap":0},{"id":"4.4","name":"Vídeos e reels","p":"e","v":500,"u":"w","c":"d","note":"Vídeos curtos de bastidores, depoimentos e demonstrações. O valor é fixo por vídeo, mas pode mudar conforme a complexidade da demanda. No plano mensal, quanto mais por semana, menor o preço por vídeo","inc":"","ph":3,"ap":0},{"id":"4.5","name":"Animações simples","p":"i","v":700,"u":"u","c":"d","note":"Vinhetas e animações curtas para stories","inc":"","ph":3,"ap":0},{"id":"4.6","name":"Renderização 3D de produto","p":"o","v":5000,"u":"u","c":"d","note":"Valor de referência para animação 3D de produto de 30 segundos. Varia conforme a complexidade do serviço. Imagens estáticas custam menos","inc":"","ph":3,"ap":1},{"id":"4.7","name":"Podcast","p":"n","v":null,"u":"u","c":"","note":"Não se aplica","inc":"","ph":3,"ap":0},{"id":"4.8","name":"Blog e materiais ricos","p":"o","v":400,"u":"x","c":"d","note":"Retorno lento. O valor varia conforme o tamanho e a pesquisa de cada post","inc":"","ph":3,"ap":0},{"id":"5.1","name":"Plano de lançamento de produto novo","p":"o","v":2000,"u":"u","c":"d","note":"Só se houver serviço ou produto novo","inc":"","ph":4,"ap":0},{"id":"5.2","name":"Campanhas sazonais","p":"i","v":2670,"u":"c","c":"e","note":"Criação de conteúdo para impulsionar datas-chave. Recomendado a cada trimestre","inc":"","ph":4,"ap":0},{"id":"5.3","name":"Estratégia de redes sociais","p":"e","v":1370,"u":"u","c":"e","note":"Um perfil por marca, com papel definido para cada rede","inc":"","ph":4,"ap":0},{"id":"5.4","name":"Gestão completa de redes sociais","p":"e","v":1530,"u":"m","c":"p","note":"Gestão de perfis, calendário de posts e reputação online (avaliações e respostas). Constância vale mais do que volume","inc":"","ph":4,"ap":0},{"id":"5.5","name":"Agente de IA para comentários e mensagens","p":"e","v":600,"u":"m","c":"d","note":"Responde comentários e mensagens das redes sociais automaticamente. Mensalidade fixa","inc":"","ph":4,"ap":0},{"id":"5.6","name":"Influenciadores locais","p":"i","v":1170,"u":"x","c":"p","note":"Micro-influenciadores costumam funcionar bem em cidades menores","inc":"","ph":4,"ap":0},{"id":"5.7","name":"Monitoramento de menções","p":"o","v":530,"u":"m","c":"e","note":"Útil só quando há muitas menções","inc":"","ph":4,"ap":0},{"id":"5.8","name":"Planejamento de mídia paga","p":"e","v":null,"u":"u","c":"s","note":"Divisão da verba e do raio geográfico dos anúncios. Já vem incluso na gestão de tráfego pago; contratado sozinho, o valor é sob orçamento","inc":"","ph":4,"ap":0},{"id":"5.9","name":"Gestão de tráfego pago (Instagram, Facebook, Google e outras plataformas)","p":"e","v":null,"u":"p","c":"d","note":"Honorário único de 35% do valor investido em anúncios. A verba é paga à parte, direto às plataformas. Recomendado testar o Google depois das redes sociais","inc":"5.8","ph":4,"ap":0},{"id":"5.12","name":"Remarketing","p":"i","v":470,"u":"m","c":"e","note":"Precisa de visitas suficientes no site","inc":"","ph":4,"ap":0},{"id":"5.14","name":"E-mail marketing","p":"o","v":800,"u":"m","c":"d","note":"O WhatsApp costuma cumprir esse papel no comércio local","inc":"","ph":4,"ap":1},{"id":"5.15","name":"Agentes de IA para atendimento (serviço geral)","p":"i","v":null,"u":"u","c":"s","note":"Agentes de IA sob medida para atender em vários canais. O valor depende da necessidade","inc":"","ph":4,"ap":0},{"id":"5.16","name":"Fidelidade e retenção","p":"e","v":null,"u":"u","c":"s","note":"Cartão, cupom ou plano que incentiva o cliente a voltar","inc":"","ph":4,"ap":0},{"id":"5.17","name":"Alinhamento entre anúncio e atendimento","p":"e","v":1070,"u":"u","c":"e","note":"Treinar quem atende para transformar o contato em venda","inc":"","ph":4,"ap":0},{"id":"5.18","name":"Materiais comerciais","p":"i","v":770,"u":"u","c":"e","note":"Tabelas, cardápios e catálogos bem diagramados","inc":"","ph":4,"ap":0},{"id":"5.19","name":"Marketing de conteúdo (inbound)","p":"o","v":2900,"u":"m","c":"d","note":"Atrair clientes com conteúdo. Retorno lento","inc":"","ph":4,"ap":0},{"id":"5.20","name":"Pontuação de leads","p":"n","v":null,"u":"u","c":"","note":"Volume baixo: uma planilha resolve","inc":"","ph":4,"ap":0},{"id":"5.21","name":"Parcerias e convênios locais","p":"o","v":1000,"u":"u","c":"e","note":"Convênios com empresas da região e ações em conjunto com outros negócios","inc":"","ph":4,"ap":0},{"id":"5.26","name":"Eventos e ativações","p":"i","v":null,"u":"u","c":"s","note":"Ações presenciais, como demonstrações abertas, noites temáticas e lançamentos","inc":"","ph":4,"ap":0},{"id":"5.27","name":"Comunicação visual nos locais","p":"i","v":null,"u":"u","c":"s","note":"Fachada, cardápio e sinalização interna. Orçamento feito com gráfica ou empresa de comunicação visual","inc":"","ph":4,"ap":0},{"id":"5.28","name":"Mídia tradicional","p":"i","v":null,"u":"u","c":"s","note":"Panfleto direcionado, faixas e rádio local. O valor depende da mídia escolhida","inc":"","ph":4,"ap":0},{"id":"5.29","name":"Brindes e materiais promocionais","p":"o","v":null,"u":"u","c":"s","note":"Itens de marca para clientes e equipe. O valor depende do item e da quantidade","inc":"","ph":4,"ap":0},{"id":"6.1","name":"Painéis de resultados","p":"i","v":1070,"u":"u","c":"e","note":"Painel único com os números principais","inc":"","ph":5,"ap":0},{"id":"6.2","name":"Relatório mensal","p":"e","v":400,"u":"m","c":"d","note":"Relatório curto e em linguagem simples: vendas, contatos e custo por resultado","inc":"","ph":5,"ap":0},{"id":"6.4","name":"Pesquisa de satisfação (NPS)","p":"i","v":530,"u":"u","c":"e","note":"Mede a satisfação e alimenta a retenção","inc":"","ph":5,"ap":0}],"pkgs":[{"n":"Básico","t":"Para manter as redes ativas com conteúdo todo mês.","b":"","sub":"Desconto especial para começar hoje.","u":0,"m":1400,"ids":["4.2","4.4"],"qty":{"4.2":0.5,"4.4":0.5},"custom":true,"av":2504,"li":["2 vídeos reels por mês","6 posts estáticos por mês","Manutenção de imagem","Estudo de tendências"]},{"n":"Essencial","t":"Para organizar a base, atender melhor e acompanhar o resultado.","b":"Mais escolhido","sub":"","u":2300,"m":3350,"ids":["1.1","1.7","3.1","3.6a","4.2","4.4","5.4","5.8","6.2"],"qty":{"4.2":1,"4.4":0.5},"np":true},{"n":"Crescimento","t":"Para atrair, converter e acompanhar clientes todos os meses.","b":"Mais completo","sub":"","u":8050,"m":5150,"ids":["1.1","1.3","1.4","1.7","2.4","3.1","3.6","3.6a","3.9","4.1","4.2","4.3","4.4","5.3","5.4","5.8","5.9","6.2"],"qty":{"4.2":2,"4.4":1}}],"vol":{"weeks":4,"step":6,"cap":30}}</script><script id="app">function sanitizeCFG(c){
  c=c&&typeof c==="object"?c:{};
  function S(x,n){return String(x==null?"":x).slice(0,n)}
  function N(x){x=Math.round(+x);return isFinite(x)&&x>=0&&x<=10000000?x:0}
@@ -231,7 +237,7 @@ var CFG;try{CFG=sanitizeCFG(JSON.parse(document.getElementById("cfg").textConten
 var D=CFG.items,PKG=CFG.pkgs,VOL=CFG.vol,WSTEPS=[0.5,1,2,3,4,5,6,7,8,9,10];
 function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;")}
 var HEAD_LINKS="<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link href=\"https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=DM+Sans:wght@400;500;700&display=swap\" rel=\"stylesheet\">";
-var BODY_TPL="\n<div class=\"wrap\">\n<header class=\"hero full-hero\" id=\"sec-intro\">\n<div class=\"hero-inner\"><h1>{{h1}}</h1>\n<p class=\"lead\">{{lead}}</p></div>\n<a href=\"#sec-pk\" class=\"scroll-cue\" id=\"scrollNextBtn\" aria-label=\"Rolar para os pacotes\"><span>Ver pacotes</span><span aria-hidden=\"true\">↓</span></a>\n</header>\n\n<section aria-labelledby=\"pk\" id=\"sec-pk\" class=\"snap-sec pk-sec\">\n<h2 id=\"pk\" class=\"sec-h\">{{pkgsTitle}}</h2>\n<div class=\"tiers-wrap\"><div class=\"tiers\" id=\"tiers\" role=\"region\" aria-label=\"Pacotes disponíveis\"></div><div class=\"pk-nav\" id=\"pknav\"><div class=\"pk-dots\" id=\"pkdots\"></div><div class=\"pk-arrows\"><button type=\"button\" class=\"pk-arr\" id=\"pkprev\" aria-label=\"Pacote anterior\">←</button><button type=\"button\" class=\"pk-arr\" id=\"pknext\" aria-label=\"Próximo pacote\">→</button></div></div></div>\n<p class=\"fn\">Os pacotes têm preço fechado, com desconto sobre a soma dos itens avulsos. Nos que incluem anúncios, a gestão cobra 35% do valor investido (R$ 525 para uma verba de R$ 1.500 por mês), e a verba é paga às plataformas. Itens sob orçamento ficam fora do preço do pacote. Posts e vídeos dos pacotes são produzidos todo mês, em quantidade semanal.</p>\n</section>\n\n<section aria-labelledby=\"sv\" id=\"sec-sv\" class=\"snap-sec sv-sec\">\n<h2 id=\"sv\" class=\"sec-h\">{{builderTitle}}</h2>\n<div class=\"filters\" id=\"filters\" role=\"group\" aria-label=\"Filtrar por prioridade\"></div>\n<div class=\"tiles\" id=\"list\"></div>\n</section>\n\n<section class=\"blk snap-sec about-sec\" id=\"sec-about\" aria-labelledby=\"tx\">\n<h2 id=\"tx\" class=\"sec-h\">{{aboutTitle}}</h2>\n{{aboutHTML}}\n</section>\n\n<section class=\"blk snap-sec contact-sec\" id=\"sec-contact\" aria-labelledby=\"ct\">\n<h2 id=\"ct\" class=\"sec-h\">{{contactTitle}}</h2>\n{{contactHTML}}\n</section>\n<footer>{{footer}}</footer>\n</div>\n\n<button type=\"button\" class=\"cart-fab\" id=\"sum\" aria-label=\"Abrir carrinho de serviços\"><span class=\"cart-ico\" aria-hidden=\"true\">🛒</span><span class=\"cart-badge\" id=\"cnt\">0</span><span class=\"sr-only\" id=\"cnt2\">Nenhum item selecionado</span></button>\n\n<dialog id=\"pdlg\" class=\"full\" aria-labelledby=\"ptitle\"><div class=\"cin\">\n<header class=\"dh\"><div><h2 id=\"ptitle\"></h2><p id=\"psub\"></p></div><div class=\"dact\"><button class=\"btn ghost small\" id=\"pcart\">Ver carrinho</button><button class=\"btn small\" id=\"pclose\">Fechar</button></div></header>\n<div class=\"dbody\" id=\"pbody\"></div>\n</div></dialog>\n\n<dialog id=\"cdlg\" class=\"cart\" aria-labelledby=\"ctitle\"><div class=\"cin\">\n<header class=\"dh\"><div><h2 id=\"ctitle\">Seu carrinho</h2><p>Revise, remova ou adicione serviços.</p></div><button class=\"btn ghost small\" id=\"cclose\">Fechar</button></header>\n<div class=\"cbody\" id=\"cbody\" tabindex=\"-1\"></div>\n<footer class=\"cf\"><textarea id=\"manual\" hidden readonly aria-label=\"Resumo para copiar\"></textarea><div class=\"row\"><button class=\"btn ghost\" id=\"more\">Continuar escolhendo</button><button class=\"btn\" id=\"copy\">Copiar resumo</button></div></footer>\n</div></dialog>\n\n\n<button class=\"editfab\" id=\"editbtn\" hidden>✎ Editar página</button>\n<dialog id=\"edlg\" class=\"full\" aria-labelledby=\"edtitle\"><div class=\"cin\">\n<header class=\"dh\"><div><h2 id=\"edtitle\">Editar página (Modo Local)</h2><p>Mude textos, links, serviços e pacotes. Ao salvar, um novo HTML será baixado para substituir este.</p></div><div class=\"dact\"><span id=\"edmsg\" class=\"edmsg\" role=\"status\"></span><button class=\"btn ghost small\" id=\"edcancel\">Fechar</button><button class=\"btn small\" id=\"edsave\">Salvar e baixar HTML</button></div></header>\n<nav class=\"edtabs\" id=\"edtabs\"></nav>\n<div class=\"dbody\" id=\"edbody\"></div>\n</div></dialog>\n";
+var BODY_TPL="\n<div class=\"wrap\">\n<header class=\"hero full-hero\" id=\"sec-intro\">\n<div class=\"hero-inner\"><h1>{{h1}}</h1>\n<p class=\"lead\">{{lead}}</p></div>\n<a href=\"#sec-pk\" class=\"scroll-cue\" id=\"scrollNextBtn\" aria-label=\"Rolar para os pacotes\"><span>Ver pacotes</span><span aria-hidden=\"true\">↓</span></a>\n</header>\n\n<section aria-labelledby=\"pk\" id=\"sec-pk\" class=\"snap-sec pk-sec\">\n<h2 id=\"pk\" class=\"sec-h\">{{pkgsTitle}}</h2>\n<div class=\"tiers-wrap\"><div class=\"tiers\" id=\"tiers\" role=\"region\" aria-label=\"Pacotes disponíveis\"></div><div class=\"pk-nav\" id=\"pknav\"><div class=\"pk-dots\" id=\"pkdots\"></div><div class=\"pk-arrows\"><button type=\"button\" class=\"pk-arr\" id=\"pkprev\" aria-label=\"Pacote anterior\">←</button><button type=\"button\" class=\"pk-arr\" id=\"pknext\" aria-label=\"Próximo pacote\">→</button></div></div></div>\n<p class=\"fn\">Os pacotes têm preço fechado, com desconto sobre a soma dos itens avulsos. Nos que incluem anúncios, a gestão cobra 35% do valor investido (R$ 525 para uma verba de R$ 1.500 por mês), e a verba é paga às plataformas. Itens sob orçamento ficam fora do preço do pacote. Posts e vídeos dos pacotes são produzidos todo mês, em quantidade semanal.</p>\n</section>\n\n<section aria-labelledby=\"sv\" id=\"sec-sv\" class=\"snap-sec sv-sec\">\n<h2 id=\"sv\" class=\"sec-h\">{{builderTitle}}</h2>\n<div class=\"filters\" id=\"filters\" role=\"group\" aria-label=\"Filtrar por prioridade\"></div>\n<div class=\"tiles\" id=\"list\"></div>\n</section>\n\n<section class=\"blk snap-sec about-sec\" id=\"sec-about\" aria-labelledby=\"tx\">\n<h2 id=\"tx\" class=\"sec-h\">{{aboutTitle}}</h2>\n{{aboutHTML}}\n</section>\n\n<section class=\"blk snap-sec contact-sec\" id=\"sec-contact\" aria-labelledby=\"ct\">\n<h2 id=\"ct\" class=\"sec-h\">{{contactTitle}}</h2>\n{{contactHTML}}\n</section>\n<footer>{{footer}}</footer>\n</div>\n\n<button type=\"button\" class=\"cart-fab\" id=\"sum\" aria-label=\"Abrir carrinho de serviços\"><span class=\"cart-ico\" aria-hidden=\"true\">🛒</span><span class=\"cart-badge\" id=\"cnt\">0</span><span class=\"sr-only\" id=\"cnt2\">Nenhum item selecionado</span></button>\n\n<dialog id=\"pdlg\" class=\"full\" aria-labelledby=\"ptitle\"><div class=\"cin\">\n<header class=\"dh\"><div><h2 id=\"ptitle\"></h2><p id=\"psub\"></p></div><div class=\"dact\"><button class=\"btn ghost small\" id=\"pcart\">Ver carrinho</button><button class=\"btn small\" id=\"pclose\">Fechar</button></div></header>\n<div class=\"dbody\" id=\"pbody\"></div>\n</div></dialog>\n\n<dialog id=\"cdlg\" class=\"cart\" aria-labelledby=\"ctitle\"><div class=\"cin\">\n<header class=\"dh\"><div><h2 id=\"ctitle\">Seu carrinho</h2><p>Revise, remova ou adicione serviços.</p></div><button class=\"btn ghost small\" id=\"cclose\">Fechar</button></header>\n<div class=\"cbody\" id=\"cbody\" tabindex=\"-1\"></div>\n<footer class=\"cf\"><textarea id=\"manual\" hidden readonly aria-label=\"Resumo para copiar\"></textarea><div class=\"cf-stack\"><button class=\"btn wpp\" id=\"finish\">Finalizar orçamento prévio</button><div class=\"cf-subrow\"><button class=\"btn ghost\" id=\"more\">Escolher mais</button><button class=\"btn ghost\" id=\"copy\">Copiar texto</button></div><p class=\"fin-note\" id=\"finStatus\">Gera imagem pronta para enviar no WhatsApp</p></div></footer>\n</div></dialog>\n\n\n<button class=\"editfab\" id=\"editbtn\" hidden>✎ Editar página</button>\n<dialog id=\"edlg\" class=\"full\" aria-labelledby=\"edtitle\"><div class=\"cin\">\n<header class=\"dh\"><div><h2 id=\"edtitle\">Editar página (Modo Local)</h2><p>Mude textos, links, serviços e pacotes. Ao salvar, um novo HTML será baixado para substituir este.</p></div><div class=\"dact\"><span id=\"edmsg\" class=\"edmsg\" role=\"status\"></span><button class=\"btn ghost small\" id=\"edcancel\">Fechar</button><button class=\"btn small\" id=\"edsave\">Salvar e baixar HTML</button></div></header>\n<nav class=\"edtabs\" id=\"edtabs\"></nav>\n<div class=\"dbody\" id=\"edbody\"></div>\n</div></dialog>\n";
 function paras(t){return String(t||"").split(/\n\s*\n/).map(function(x){return x.trim()}).filter(Boolean).map(function(x){return '<p class="ptxt">'+esc(x).replace(/\n/g,"<br>")+"</p>"}).join("")}
 function safeUrl(u){u=String(u||"").trim();if(u&&!/^[a-z][a-z0-9+.-]*:/i.test(u)&&/^[\w-]+(\.[\w-]+)+/.test(u))u="https://"+u;return /^(https?:\/\/|mailto:|tel:)/i.test(u)?u:""}
 function sqLink(url,ic,title,txt){var u=safeUrl(url);return (u?'<a class="sq" href="'+esc(u)+'" target="_blank" rel="noopener noreferrer">':'<div class="sq">')+'<span class="ic">'+ic+"</span><h3>"+title+"</h3><p>"+esc(txt)+"</p>"+(u?"</a>":"</div>")}
@@ -382,7 +388,11 @@ function renderCart(){
   if(p)h+='<p class="fn">Extras e ajustes de quantidade somam ao preço do pacote. Remover um item do pacote volta o preço para a soma dos valores avulsos.</p>'}
  var rc=recs();
  if(rc.length)h+='<h3 class="rh">Recomendados para enriquecer o seu plano</h3><ul class="cl">'+rc.map(function(r){var d=byId(r[0]);return "<li><div><b>"+esc(d.name)+"</b><small>"+esc(r[1])+'</small><small class="pr2">'+priceTxt(d)+'</small></div><button class="add" data-add="'+d.id+'">Adicionar</button></li>'}).join("")+"</ul>";
- $("cbody").innerHTML=h}
+ $("cbody").innerHTML=h;
+ var finBtn=$("finish"),cpyBtn=$("copy");
+ if(finBtn)finBtn.disabled=!items.length;
+ if(cpyBtn)cpyBtn.disabled=!items.length;
+}
 function openCart(){if($("pdlg").open){$("list").classList.remove("is-expanding");if(lastPhaseBtn)lastPhaseBtn.classList.remove("is-active");$("pdlg").style.transition="";$("pdlg").style.transform="";$("pdlg").style.opacity="";$("pdlg").close()}renderCart();if(!$("cdlg").open)$("cdlg").showModal()}
 
 function updBar(){
@@ -406,6 +416,302 @@ function summary(){
  if(!any)return "Você ainda não selecionou nenhum item. Comece por um pacote.";
  return t+"\n"+(p?"Preço do pacote (com extras, se houver): ":"Estimativa (valor avulso): ")+fmtTot(cartPrice())+"\nValores de referência. Itens por unidade entram com 1 unidade. Não inclui verba de anúncios."}
 
+/* ---------- Gerador de Imagem PNG para WhatsApp ---------- */
+function wrapLines(ctx,text,maxW){
+ var words=String(text||"").split(/\s+/),lines=[],cur="";
+ for(var i=0;i<words.length;i++){
+  var w=words[i],test=cur?cur+" "+w:w;
+  if(ctx.measureText(test).width<=maxW){cur=test}
+  else{if(cur)lines.push(cur);cur=w}
+ }
+ if(cur)lines.push(cur);
+ return lines.length?lines:[""];
+}
+function rrect(ctx,x,y,w,h,r){
+ ctx.beginPath();
+ ctx.moveTo(x+r,y);
+ ctx.arcTo(x+w,y,x+w,y+h,r);
+ ctx.arcTo(x+w,y+h,x,y+h,r);
+ ctx.arcTo(x,y+h,x,y,r);
+ ctx.arcTo(x,y,x+w,y,r);
+ ctx.closePath();
+}
+function renderQuoteCanvas(){
+ var p=chosen!==null?PKG[chosen]:null;
+ var groups=[];
+ PH.forEach(function(name,k){
+  var its=D.filter(function(d){return d.ph===k&&sel[d.id]});
+  if(its.length)groups.push({num:k+1,name:name,items:its});
+ });
+ var W=900,PAD=52,INNER=W-PAD*2,DPR=2;
+ var mCanvas=document.createElement("canvas");
+ var mCtx=mCanvas.getContext("2d");
+
+ // Calcula altura dinâmica exata
+ var y=60;
+ y+=34; // tag topo
+ y+=46; // titulo
+ y+=34; // data/subtitulo
+ if(p){y+=78;}
+ y+=16;
+
+ groups.forEach(function(g){
+  y+=42; // cabeçalho da fase
+  g.items.forEach(function(d){
+   var cv=covered(d.id);
+   var pr=cv?"Incluso no pacote/item":priceTxt(d);
+   mCtx.font="700 21px 'DM Sans', system-ui, sans-serif";
+   var prW=mCtx.measureText(pr).width+24;
+   var nameMaxW=INNER-36-prW;
+   var nLines=wrapLines(mCtx,d.name,Math.max(220,nameMaxW));
+   y+=Math.max(46,nLines.length*27+20)+8;
+  });
+  y+=14;
+ });
+
+ // Caixa de total
+ y+=112;
+ if(sel["5.9"])y+=26;
+ var nq=D.filter(function(d){return sel[d.id]&&d.v==null&&d.u!=="p"&&!covered(d.id)}).length;
+ if(nq)y+=26;
+ y+=24;
+ // Rodapé
+ y+=74;
+ var H=Math.max(640,y+30);
+
+ var canvas=document.createElement("canvas");
+ canvas.width=W*DPR;
+ canvas.height=H*DPR;
+ var ctx=canvas.getContext("2d");
+ ctx.scale(DPR,DPR);
+
+ // Fundo principal
+ ctx.fillStyle="#0B090A";
+ ctx.fillRect(0,0,W,H);
+
+ // Faixa superior decorativa
+ var grad=ctx.createLinearGradient(0,0,W,0);
+ grad.addColorStop(0,"#A63A55");
+ grad.addColorStop(1,"#C95B76");
+ ctx.fillStyle=grad;
+ ctx.fillRect(0,0,W,10);
+
+ var cy=54;
+ // Pill superior
+ rrect(ctx,PAD,cy,255,30,15);
+ ctx.fillStyle="#2B0F17";
+ ctx.fill();
+ ctx.strokeStyle="rgba(201,91,118,0.45)";
+ ctx.lineWidth=1.5;
+ ctx.stroke();
+ ctx.fillStyle="#C95B76";
+ ctx.font="700 14px 'DM Sans', system-ui, sans-serif";
+ ctx.fillText("ORÇAMENTO PRÉVIO · MARKETING",PAD+16,cy+20);
+
+ // Data à direita
+ var hoje=new Date().toLocaleDateString("pt-BR");
+ ctx.fillStyle="#8C888A";
+ ctx.font="500 16px 'DM Sans', system-ui, sans-serif";
+ ctx.textAlign="right";
+ ctx.fillText("Gerado em "+hoje,W-PAD,cy+20);
+ ctx.textAlign="left";
+
+ cy+=68;
+ ctx.fillStyle="#F2F2F2";
+ ctx.font="800 38px 'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif";
+ ctx.fillText("Plano de Marketing",PAD,cy);
+
+ cy+=30;
+ ctx.fillStyle="#8C888A";
+ ctx.font="400 18px 'DM Sans', system-ui, sans-serif";
+ ctx.fillText("Resumo dos serviços selecionados para alinhamento inicial",PAD,cy);
+ cy+=26;
+
+ // Destaque de pacote fechado (se houver)
+ if(p){
+  rrect(ctx,PAD,cy,INNER,62,14);
+  ctx.fillStyle="#132E21";
+  ctx.fill();
+  ctx.strokeStyle="#4FCB8A";
+  ctx.lineWidth=1.5;
+  ctx.stroke();
+
+  ctx.fillStyle="#4FCB8A";
+  ctx.font="700 20px 'DM Sans', system-ui, sans-serif";
+  ctx.fillText("Pacote "+p.n+" selecionado",PAD+20,cy+27);
+
+  ctx.fillStyle="#D6D6D6";
+  ctx.font="500 16px 'DM Sans', system-ui, sans-serif";
+  ctx.fillText("Base com preço fechado: "+fmtTot({u:p.u,m:p.m}),PAD+20,cy+49);
+  cy+=78;
+ }
+
+ cy+=12;
+ // Lista de serviços por fase
+ groups.forEach(function(g){
+  ctx.fillStyle="#C95B76";
+  ctx.font="800 20px 'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif";
+  ctx.fillText(g.num+". "+g.name.toUpperCase(),PAD,cy+22);
+  cy+=36;
+
+  g.items.forEach(function(d){
+   var cv=covered(d.id);
+   var pr=cv?"Incluso":priceTxt(d);
+   ctx.font="700 19px 'DM Sans', system-ui, sans-serif";
+   var prW=ctx.measureText(pr).width+24;
+   ctx.font="700 20px 'DM Sans', system-ui, sans-serif";
+   var nameMaxW=INNER-36-prW;
+   var nLines=wrapLines(ctx,d.name,Math.max(220,nameMaxW));
+   var boxH=Math.max(46,nLines.length*26+20);
+
+   rrect(ctx,PAD,cy,INNER,boxH,12);
+   ctx.fillStyle="#180A0E";
+   ctx.fill();
+   ctx.strokeStyle="#3E1924";
+   ctx.lineWidth=1.2;
+   ctx.stroke();
+
+   // Check verde
+   ctx.fillStyle="#4FCB8A";
+   ctx.font="700 18px 'DM Sans', system-ui, sans-serif";
+   ctx.fillText("✓",PAD+14,cy+29);
+
+   // Nome do serviço
+   ctx.fillStyle="#E6E6E6";
+   ctx.font="700 19px 'DM Sans', system-ui, sans-serif";
+   nLines.forEach(function(line,idx){
+    ctx.fillText(line,PAD+38,cy+28+(idx*25));
+   });
+
+   // Preço à direita
+   ctx.textAlign="right";
+   ctx.fillStyle=cv?"#8C888A":"#D6D6D6";
+   ctx.font="700 18px 'DM Sans', system-ui, sans-serif";
+   ctx.fillText(pr,W-PAD-16,cy+28);
+   ctx.textAlign="left";
+
+   cy+=boxH+8;
+  });
+  cy+=12;
+ });
+
+ // Bloco de Total
+ var totH=96+(sel["5.9"]?24:0)+(nq?24:0);
+ rrect(ctx,PAD,cy,INNER,totH,16);
+ ctx.fillStyle="#2B0F17";
+ ctx.fill();
+ ctx.strokeStyle="#C95B76";
+ ctx.lineWidth=2;
+ ctx.stroke();
+
+ var totLabel=p?"INVESTIMENTO ESTIMADO (PACOTE + AJUSTES)":"INVESTIMENTO ESTIMADO (AVULSO)";
+ ctx.fillStyle="#C95B76";
+ ctx.font="700 15px 'DM Sans', system-ui, sans-serif";
+ ctx.fillText(totLabel,PAD+22,cy+30);
+
+ ctx.fillStyle="#FFFFFF";
+ ctx.font="800 32px 'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif";
+ ctx.fillText(fmtTot(cartPrice()),PAD+22,cy+68);
+
+ var noteY=cy+92;
+ ctx.fillStyle="#B4AEB0";
+ ctx.font="400 15px 'DM Sans', system-ui, sans-serif";
+ if(sel["5.9"]){
+  ctx.fillText("• Gestão de tráfego: 35% da verba investida (verba paga direto às plataformas).",PAD+22,noteY);
+  noteY+=23;
+ }
+ if(nq){
+  ctx.fillText("• "+nq+(nq>1?" itens sob orçamento não somam":" item sob orçamento não soma")+" no total acima.",PAD+22,noteY);
+  noteY+=23;
+ }
+
+ cy+=totH+28;
+ // Linha divisória e rodapé
+ ctx.strokeStyle="#3E1924";
+ ctx.lineWidth=1;
+ ctx.beginPath();
+ ctx.moveTo(PAD,cy);
+ ctx.lineTo(W-PAD,cy);
+ ctx.stroke();
+
+ cy+=26;
+ ctx.fillStyle="#8C888A";
+ ctx.font="500 15px 'DM Sans', system-ui, sans-serif";
+ var cInfo=[CFG.contact.name,CFG.contact.phone,CFG.contact.email].filter(Boolean).join("  ·  ");
+ ctx.fillText(cInfo||"Valores de referência sujeitos a alinhamento de escopo.",PAD,cy);
+ cy+=22;
+ ctx.font="400 14px 'DM Sans', system-ui, sans-serif";
+ ctx.fillText("Valores de referência. O escopo final será confirmado após conversa inicial.",PAD,cy);
+
+ return canvas;
+}
+
+function downloadBlob(blob,filename){
+ var url=URL.createObjectURL(blob);
+ var a=document.createElement("a");
+ a.href=url;
+ a.download=filename;
+ document.body.appendChild(a);
+ a.click();
+ a.remove();
+ setTimeout(function(){URL.revokeObjectURL(url)},4000);
+}
+
+function finishQuote(){
+ if(!selN())return;
+ var btn=$("finish"),st=$("finStatus");
+ btn.disabled=true;
+ btn.textContent="Gerando imagem...";
+ setTimeout(function(){
+  try{
+   var canvas=renderQuoteCanvas();
+   canvas.toBlob(function(blob){
+    if(!blob){
+     btn.disabled=false;
+     btn.textContent="Finalizar orçamento prévio";
+     st.textContent="Erro ao gerar imagem. Use 'Copiar texto'.";
+     return;
+    }
+    var file=new File([blob],"orcamento-marketing.png",{type:"image/png"});
+    var phone=String(CFG.contact.phone||"").replace(/\D/g,"");
+    var msgTxt=encodeURIComponent("Olá"+(CFG.contact.name?" "+CFG.contact.name:"")+"! Montei meu orçamento prévio de marketing no site e estou enviando a imagem com os serviços escolhidos.");
+    var canShareFiles=navigator.canShare&&navigator.canShare({files:[file]})&&/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if(canShareFiles){
+     navigator.share({
+      files:[file],
+      title:"Orçamento prévio de marketing",
+      text:"Olá! Segue o meu orçamento prévio de marketing."
+     }).then(function(){
+      st.textContent="Orçamento compartilhado com sucesso!";
+     }).catch(function(){
+      downloadBlob(blob,"orcamento-marketing.png");
+      st.textContent="Imagem salva na galeria/downloads! Anexe no WhatsApp.";
+     }).finally(function(){
+      btn.disabled=false;
+      btn.textContent="Finalizar orçamento prévio";
+     });
+    }else{
+     downloadBlob(blob,"orcamento-marketing.png");
+     st.textContent="Imagem baixada! Abrindo WhatsApp para você anexar...";
+     btn.disabled=false;
+     btn.textContent="Imagem baixada ✓";
+     setTimeout(function(){btn.textContent="Finalizar orçamento prévio"},3000);
+     if(phone.length>=10){
+      setTimeout(function(){
+       window.open("https://wa.me/"+phone+"?text="+msgTxt,"_blank","noopener,noreferrer");
+      },600);
+     }
+    }
+   },"image/png");
+  }catch(err){
+   btn.disabled=false;
+   btn.textContent="Finalizar orçamento prévio";
+   st.textContent="Não foi possível gerar a imagem. Tente 'Copiar texto'.";
+  }
+ },60);
+}
+
 $("filters").innerHTML='<span class="fl">Filtrar por prioridade</span>'+[["e","Essencial"],["i","Importante"],["o","Opcional"]].map(function(f){return '<button class="chip" data-f="'+f[0]+'" aria-pressed="false">'+f[1]+"</button>"}).join("");
 $("filters").onclick=function(e){var b=e.target.closest(".chip");if(!b)return;fset[b.dataset.f]=!fset[b.dataset.f];b.setAttribute("aria-pressed",String(!!fset[b.dataset.f]));refresh()};
 $("list").onclick=function(e){var b=e.target.closest("button.ph");if(b)openPhase(+b.dataset.k,b)};
@@ -423,9 +729,10 @@ $("cbody").onclick=function(e){if(wkClick(e,$("cbody")))return;var r=e.target.cl
  if(r){var i=r.dataset.rm;sel[i]=false;delete wq[i];var d=byId(i);if(d.inc)d.inc.split(",").forEach(function(j){sel[j]=false;delete wq[j]});fix();refresh();$("cbody").focus({preventScroll:true})}
  else if(a){sel[a.dataset.add]=true;applyB();refresh();$("cbody").focus({preventScroll:true})}};
 $("tiers").onclick=function(e){var b=e.target.closest("button[data-k]");if(!b)return;sel={};wq={};chosen=+b.dataset.k;PKG[chosen].ids.forEach(function(i){sel[i]=true});var Qk=PKG[chosen].qty||{};Object.keys(Qk).forEach(function(i){wq[i]=Qk[i]});applyB();refresh();openCart()};
+$("finish").onclick=finishQuote;
 $("copy").onclick=function(){var t=summary(),ok=false,ta=document.createElement("textarea");ta.value=t;ta.style.cssText="position:fixed;opacity:0";$("cdlg").appendChild(ta);ta.select();try{ok=document.execCommand("copy")}catch(x){}ta.remove();
- $("copy").textContent=ok?"Copiado":"Não foi possível copiar";if(!ok){$("manual").hidden=false;$("manual").value=t;$("manual").select()}
- setTimeout(function(){$("copy").textContent="Copiar resumo"},2200)};
+ $("copy").textContent=ok?"Copiado ✓":"Não foi possível copiar";if(!ok){$("manual").hidden=false;$("manual").value=t;$("manual").select()}
+ setTimeout(function(){$("copy").textContent="Copiar texto"},2200)};
 
 function isMobileCarousel(){return typeof window.matchMedia==="function"?window.matchMedia("(max-width: 768px)").matches:window.innerWidth<=768}
 
